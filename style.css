@@ -82,14 +82,14 @@ body {
     overflow: hidden;
 }
 
-#matrix-canvas {
+.matrix-canvas {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 0;
-    opacity: 0.15; /* Sutil para não ofuscar o texto */
+    opacity: 0.15;
     pointer-events: none;
 }
 
@@ -184,8 +184,36 @@ body {
 
 /* ================= Biografia Section ================= */
 .bio-section {
+    position: relative;
     padding: 100px 5%;
     background-color: #0d0d14;
+    overflow: hidden;
+}
+
+.bio-section::before, .contact-section::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background-image: url('assets/bandeira_pe.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.05;
+    z-index: 0;
+    animation: panFlag 30s linear infinite alternate;
+}
+
+@keyframes panFlag {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-5%, -5%) scale(1.1); }
+}
+
+.bio-section .container, .contact-section .container {
+    position: relative;
+    z-index: 1;
 }
 
 .container {
@@ -239,6 +267,39 @@ body {
     gap: 0.5rem;
 }
 
+/* Accordion para Stacks */
+.accordion {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    padding: 1rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+.accordion summary {
+    list-style: none; /* remove default arrow */
+    outline: none;
+}
+.accordion summary::-webkit-details-marker {
+    display: none;
+}
+.accordion[open] .arrow-icon {
+    transform: rotate(180deg);
+}
+.arrow-icon {
+    transition: transform 0.3s ease;
+    margin-left: auto;
+}
+.accordion h3 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0;
+}
+.accordion .skills {
+    margin-top: 1.5rem;
+}
+
 .skills {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -282,8 +343,10 @@ body {
 
 /* ================= Seção de Projetos ================= */
 .projects-section {
+    position: relative;
     padding: 100px 5%;
     background-color: var(--bg-dark);
+    overflow: hidden;
 }
 
 .projects-grid {
@@ -293,6 +356,8 @@ body {
 }
 
 .project-card {
+    display: flex;
+    flex-direction: column;
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: 16px;
@@ -325,6 +390,9 @@ body {
 
 .project-info {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .project-info h3 {
@@ -337,13 +405,16 @@ body {
     color: var(--text-muted);
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
+    flex-grow: 1;
 }
 
 /* ================= Seção de Contato ================= */
 .contact-section {
+    position: relative;
     padding: 100px 5%;
     background-color: #0d0d14;
     text-align: center;
+    overflow: hidden;
 }
 
 .contact-content {

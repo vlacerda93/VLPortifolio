@@ -31,8 +31,7 @@
     <!-- Seção Principal (Hero) -->
     <main>
         <section id="hero" class="hero-section">
-            <!-- Canvas do Matrix -->
-            <canvas id="matrix-canvas"></canvas>
+            <canvas class="matrix-canvas"></canvas>
             <div class="hero-content">
                 <span class="greeting">Olá, meu nome é</span>
                 <h1>Vinicius Lacerda</h1>
@@ -53,41 +52,42 @@
                 <h2 class="section-title">Sobre <span>Mim</span></h2>
                 <div class="bio-content">
                     <div class="bio-card">
-                        <p>Sou graduando em Análise e Desenvolvimento de Sistemas e um desenvolvedor movido pelo desafio de traduzir lógica complexa em código limpo, eficiente e seguro. Minha trajetória combina uma sólida bagagem técnica em infraestrutura de redes com a paixão pelo desenvolvimento de software moderno e pela Cibersegurança.</p>
+                        <p>Sou graduando em Análise e Desenvolvimento de Sistemas e um desenvolvedor movido pelo desafio de traduzir lógica complexa em código limpo, eficiente e seguro.</p>
+                        <p>Minha trajetória combina uma sólida bagagem técnica em infraestrutura de redes com a paixão pelo desenvolvimento de software moderno me aprimorando em <a href="https://aponti.org.br/" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600;">DevOps</a> e <a href="https://site.pacificsec.com/" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600;">Cibersegurança</a>.</p>
                         <p>Atualmente, divido o meu foco entre a criação de interfaces web responsivas e o desenvolvimento de ferramentas de backend automatizadas — como analisadores de logs em Python e aplicações estruturadas em microsserviços com Docker.</p>
                         <p>Minha filosofia de trabalho é moldada pela disciplina e constância do Karate: acredito que a busca pela excelência técnica, a atenção aos detalhes e a resiliência são fundamentais para solucionar problemas complexos. Estou pronto para conectar essa mentalidade a ambientes de inovação e tecnologia de ponta, contribuindo ativamente para o ecossistema tecnológico.</p>
                         <p>Acredito que a tecnologia existe para aproximar pessoas e impulsionar negócios. Ser desenvolvedor me permite conectar com diferentes mundos, conhecer novas histórias e gerar um impacto direto e positivo na vida de clientes e usuários através de soluções eficientes e seguras.</p>
                         
                         <div class="skills-wrapper">
-                            <div class="skill-category">
-                                <h3><i class="fa-solid fa-code"></i> Front-End</h3>
+                            <details class="skill-category accordion" open>
+                                <summary><h3><i class="fa-solid fa-code"></i> Web <i class="fa-solid fa-chevron-down arrow-icon"></i></h3></summary>
                                 <div class="skills">
                                     <div class="skill-icon"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
                                     <div class="skill-icon"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
                                     <div class="skill-icon"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
                                     <div class="skill-icon"><i class="fa-solid fa-mobile-screen colored-icon"></i><span>UI/UX Resp.</span></div>
                                 </div>
-                            </div>
+                            </details>
                             
-                            <div class="skill-category">
-                                <h3><i class="fa-solid fa-shield-halved"></i> DevOps & Segurança</h3>
+                            <details class="skill-category accordion">
+                                <summary><h3><i class="fa-solid fa-shield-halved"></i> DevOps & Segurança <i class="fa-solid fa-chevron-down arrow-icon"></i></h3></summary>
                                 <div class="skills">
                                     <div class="skill-icon"><i class="fa-solid fa-magnifying-glass-chart colored-icon"></i><span>Blue Team</span></div>
                                     <div class="skill-icon"><i class="fa-solid fa-bug-slash colored-icon"></i><span>Mitigação</span></div>
                                     <div class="skill-icon"><i class="devicon-debian-plain colored"></i><span>Linux</span></div>
                                     <div class="skill-icon"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
                                 </div>
-                            </div>
+                            </details>
 
-                            <div class="skill-category">
-                                <h3><i class="fa-solid fa-database"></i> Bancos de Dados & Ferramentas</h3>
+                            <details class="skill-category accordion">
+                                <summary><h3><i class="fa-solid fa-database"></i> Bancos de Dados & Ferramentas <i class="fa-solid fa-chevron-down arrow-icon"></i></h3></summary>
                                 <div class="skills">
                                     <div class="skill-icon"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
                                     <div class="skill-icon"><i class="devicon-git-plain colored"></i><span>Git</span></div>
                                     <div class="skill-icon"><i class="devicon-github-original"></i><span>GitHub</span></div>
                                     <div class="skill-icon"><i class="fa-solid fa-infinity colored-icon"></i><span>CI/CD</span></div>
                                 </div>
-                            </div>
+                            </details>
                         </div>
                     </div>
                 </div>
@@ -96,13 +96,15 @@
 
         <!-- Seção de Projetos -->
         <section id="projetos" class="projects-section">
+            <!-- Canvas do Matrix -->
+            <canvas class="matrix-canvas"></canvas>
             <div class="container">
                 <h2 class="section-title">Meus <span>Projetos</span></h2>
                 <div class="projects-grid">
                     <!-- Fuinha -->
                     <div class="project-card">
                         <div class="project-img">
-                            <img src="assets/fuinha_mockup.png" alt="Fuinha Analiser">
+                            <img src="assets/fuinha_real.png" alt="Fuinha Analiser">
                         </div>
                         <div class="project-info">
                             <h3>Fuinha Network Monitor</h3>
@@ -113,23 +115,23 @@
                     <!-- Mero -->
                     <div class="project-card">
                         <div class="project-img">
-                            <img src="assets/mero_mockup.png" alt="Escuna Mero">
+                            <img src="assets/mero_real.png" alt="Escuna Mero">
                         </div>
                         <div class="project-info">
                             <h3>Escuna Mero Turismo</h3>
                             <p>Website moderno desenvolvido em Next.js e React para empresa de passeios tropicais. Design focado na experiência do usuário.</p>
-                            <a href="https://github.com/vlacerda93/mero-turismo-website" target="_blank" class="btn btn-primary"><i class="fa-brands fa-github"></i> Ver no GitHub</a>
+                            <a href="https://www.merotur.com.br/" target="_blank" class="btn btn-primary"><i class="fa-solid fa-globe"></i> Ver Site Online</a>
                         </div>
                     </div>
                     <!-- PrintBord -->
                     <div class="project-card">
                         <div class="project-img">
-                            <img src="assets/printbord_mockup.png" alt="PrintBord">
+                            <img src="assets/printbord_real.png" alt="PrintBord">
                         </div>
                         <div class="project-info">
                             <h3>PrintBord Landing Page</h3>
                             <p>Landing page construída com Vite, React e TypeScript para promover serviços de impressão e comunicação visual.</p>
-                            <a href="https://github.com/vlacerda93/printbord-landing-page" target="_blank" class="btn btn-primary"><i class="fa-brands fa-github"></i> Ver no GitHub</a>
+                            <a href="https://printbord-landing-page.vercel.app/" target="_blank" class="btn btn-primary"><i class="fa-solid fa-globe"></i> Ver Site Online</a>
                         </div>
                     </div>
                 </div>
@@ -145,7 +147,7 @@
                     <div class="contact-links">
                         <a href="https://github.com/vlacerda93" target="_blank" class="contact-btn"><i class="devicon-github-original"></i> GitHub</a>
                         <a href="#" class="contact-btn"><i class="devicon-linkedin-plain"></i> LinkedIn</a>
-                        <a href="mailto:contato@exemplo.com" class="contact-btn"><i class="fa-solid fa-envelope"></i> E-mail</a>
+                        <a href="mailto:viniciuslacerdape2@gmail.com" class="contact-btn"><i class="fa-solid fa-envelope"></i> E-mail</a>
                     </div>
                 </div>
             </div>
