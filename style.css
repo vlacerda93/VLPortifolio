@@ -169,17 +169,74 @@ body {
     border-color: var(--text-main);
 }
 
-/* Efeito de luz ao fundo do Hero */
+/* Efeito de luz ao fundo do Hero / Botão de Tema */
 .hero-glow {
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    pointer-events: none;
+    position: fixed;
+    z-index: 1001;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-main);
+    font-size: 1.5rem;
+    animation: formToCorner 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    transition: background 0.3s, transform 0.3s;
+    border: none;
+    outline: none;
+}
+
+.hero-glow:hover {
+    transform: scale(1.1);
+}
+
+@keyframes formToCorner {
+    0% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+        border-radius: 50%;
+        box-shadow: none;
+        color: transparent;
+    }
+    50% {
+        color: transparent;
+    }
+    100% {
+        top: 2rem;
+        left: calc(100% - 5rem);
+        transform: translate(0, 0);
+        width: 50px;
+        height: 50px;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 50%;
+        box-shadow: 0 0 15px var(--accent-glow);
+        color: var(--text-main);
+    }
+}
+
+/* ================= Dark/Light Mode ================= */
+body.light-mode {
+    --bg-dark: #f0f0f5;
+    --text-main: #1a1a24;
+    --text-muted: #4a4a5a;
+    --glass-bg: rgba(0, 0, 0, 0.05);
+    --glass-border: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .matrix-canvas {
+    opacity: 0.05;
+}
+
+body.light-mode .bio-section, body.light-mode .contact-section {
+    background-color: #e8e8f2;
+}
+
+body.light-mode .navbar {
+    background: rgba(240, 240, 245, 0.8);
 }
 
 /* ================= Biografia Section ================= */

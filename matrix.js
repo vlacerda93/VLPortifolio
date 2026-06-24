@@ -68,3 +68,21 @@ function drawMatrix() {
 
 // Otimizar com setInterval para controlar a velocidade (ex: 140ms = ~7fps, 25% da velocidade original)
 setInterval(drawMatrix, 140);
+
+// ================= Theme Toggle =================
+const themeToggleBtn = document.getElementById('theme-toggle');
+if(themeToggleBtn) {
+    const themeIcon = themeToggleBtn.querySelector('i');
+    
+    themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        
+        if (document.body.classList.contains('light-mode')) {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        } else {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+    });
+}
